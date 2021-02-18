@@ -18,6 +18,11 @@ To use:
 
 ```bash
 xc-similarity{py37}$ bin/Release/XMLSimilar ~/Desktop/BILLS-116hr1500ih.xml ~/Desktop/BILLS-116hr1500rh.xml
-<To> document containing 84% of <From> document.
-<From> document containing 84% of <To> document.
+{
+    "from_ngram_num": 5946,
+    "to_ngram_num": 5914,
+    "intersection_num": 5021,
+    "from_match_percent": 84,
+    "to_match_percent": 84
+}
 ```
