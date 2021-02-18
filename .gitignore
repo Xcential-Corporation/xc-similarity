@@ -1,6 +1,12 @@
 # Prerequisites
 *.d
 
+# CMake
+CMakeCache.txt
+CMakeFiles
+Makefile
+cmake_install.cmake
+
 # Compiled Object files
 *.slo
 *.lo
@@ -30,3 +36,4 @@
 *.exe
 *.out
 *.app
+bin/
