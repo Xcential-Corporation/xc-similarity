@@ -115,9 +115,13 @@ int main(int argc, char* argv[])
     set_intersection(from_ngrams.begin(), from_ngrams.end(), to_ngrams.begin(), to_ngrams.end(), inserter(intersection, intersection.begin()));
     int c1 = intersection.size()*100/to_ngrams.size();
     int c2 = intersection.size()*100/from_ngrams.size();
-    cout<<"<To> document containing "<<c1<<"% of <From> document.\n";
-    cout<<"<From> document containing "<<c2<<"% of <To> document.\n";
-    
+    cout<<"{\n";
+    cout<<"    \"from_ngram_num\": "<<from_ngrams.size()<<",\n";
+    cout<<"    \"to_ngram_num\": "<<to_ngrams.size()<<",\n";
+    cout<<"    \"intersection_num\": "<<intersection.size()<<",\n";
+    cout<<"    \"from_match_percent\": "<<c2<<",\n";
+    cout<<"    \"to_match_percent\": "<<c1<<endl;
+    cout<<"}\n";
 
   return 0;
 }
