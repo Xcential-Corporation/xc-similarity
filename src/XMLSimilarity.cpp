@@ -99,18 +99,25 @@ match_table match_node_by_ngrams(const xml_node& node, int n, const ngram_map& n
 
 int main(int argc, char* argv[])
 {
-    if (argc!=3) {
-        cerr<<"Syntax: XMLSimilar <from> <to>\n\n";
+    int i = 1;
+    int n = 3;
+    if (argv[1]==string("-n")) {
+        n = stoi(argv[2]);
+        i+=2;
+    }
+    
+    if ((argc-i)!=2) {
+        cerr<<"Syntax: XMLSimilar [-n number] <from> <to>\n\n";
         exit(1);
     }
-    string from_file = argv[1];
-    string to_file = argv[2];
+    string from_file = argv[i];
+    string to_file = argv[i+1];
     xml_document from_doc;
     loadXML(from_doc, from_file);
     xml_document to_doc;
     loadXML(to_doc, to_file);
-    ngrams_set from_ngrams = get_ngrams(from_doc, 3);
-    ngrams_set to_ngrams = get_ngrams(to_doc, 3);
+    ngrams_set from_ngrams = get_ngrams(from_doc, n);
+    ngrams_set to_ngrams = get_ngrams(to_doc, n);
     ngrams_set intersection;
     set_intersection(from_ngrams.begin(), from_ngrams.end(), to_ngrams.begin(), to_ngrams.end(), inserter(intersection, intersection.begin()));
     int c1 = intersection.size()*100/to_ngrams.size();
