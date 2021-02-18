@@ -14,7 +14,7 @@ $ make
 This builds an executable in `bin/Release/XMLSimilar`.
 
 To use: 
-`XMLSimilar <from> <to>`, where `<from>` is the path to a 'from' XML document and 'to' is a path to a 'to' document. For example:
+`XMLSimilar [-n number] <from> <to>` where `<from>` is the path to a 'from' XML document, '<to>' is a path to a 'to' document and `-n` is an optional flag for the number of the n-gram (default is 3). For example:
 
 ```bash
 xc-similarity{py37}$ bin/Release/XMLSimilar ~/Desktop/BILLS-116hr1500ih.xml ~/Desktop/BILLS-116hr1500rh.xml
@@ -24,5 +24,18 @@ xc-similarity{py37}$ bin/Release/XMLSimilar ~/Desktop/BILLS-116hr1500ih.xml ~/De
     "intersection_num": 5021,
     "from_match_percent": 84,
     "to_match_percent": 84
+}
+```
+
+Or using `5-grams`:
+
+```bash
+xc-similarity{py37}$ bin/Release/XMLSimilar -n 20 ~/Desktop/BILLS-116hr1500ih.xml ~/Desktop/BILLS-116hr1500rh.xml 
+{
+    "from_ngram_num": 8225,
+    "to_ngram_num": 8445,
+    "intersection_num": 4041,
+    "from_match_percent": 49,
+    "to_match_percent": 47
 }
 ```
