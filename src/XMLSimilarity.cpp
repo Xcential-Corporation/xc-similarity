@@ -10,7 +10,8 @@
 using namespace std;
 using namespace pugi;
 
-typedef set<string> ngrams_set;
+//typedef set<string> ngrams_set;
+typedef set<size_t> ngrams_set;
 typedef vector<xml_node> xml_nodes;
 typedef map<string,xml_nodes> ngram_map;
 typedef map<xml_node, int> match_table;
@@ -45,7 +46,8 @@ ngrams_set get_ngrams(const xml_node& node, int n)
     TokenList ngram(first, last);
     do {
         string text = flat.get_text(ngram);
-        res.insert(text);
+        //res.insert(text);
+        res.insert(hash<string>{}(text));
     } while (ngram.shiftRight());
     return res;
 }
