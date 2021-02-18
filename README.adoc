@@ -27,7 +27,7 @@ xc-similarity{py37}$ bin/Release/XMLSimilar ~/Desktop/BILLS-116hr1500ih.xml ~/De
 }
 ```
 
-Or using `5-grams`:
+Or using `20-grams`:
 
 ```bash
 xc-similarity{py37}$ bin/Release/XMLSimilar -n 20 ~/Desktop/BILLS-116hr1500ih.xml ~/Desktop/BILLS-116hr1500rh.xml 
