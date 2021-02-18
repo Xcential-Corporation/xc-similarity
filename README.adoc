@@ -1,0 +1,23 @@
+# xc-similarity
+
+Tools to calculate similarity between documents
+
+## Quickstart
+
+Build the XMLSimilar tool (requires installation of CMake):
+
+```bash
+$ cmake CMakeLists.txt
+$ make
+```
+
+This builds an executable in `bin/Release/XMLSimilar`.
+
+To use: 
+`XMLSimilar <from> <to>`, where `<from>` is the path to a 'from' XML document and 'to' is a path to a 'to' document. For example:
+
+```bash
+xc-similarity{py37}$ bin/Release/XMLSimilar ~/Desktop/BILLS-116hr1500ih.xml ~/Desktop/BILLS-116hr1500rh.xml
+<To> document containing 84% of <From> document.
+<From> document containing 84% of <To> document.
+```

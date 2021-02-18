@@ -115,8 +115,8 @@ int main(int argc, char* argv[])
     set_intersection(from_ngrams.begin(), from_ngrams.end(), to_ngrams.begin(), to_ngrams.end(), inserter(intersection, intersection.begin()));
     int c1 = intersection.size()*100/to_ngrams.size();
     int c2 = intersection.size()*100/from_ngrams.size();
-    cout<<"<To> document containing "<<c1<<"% of <From> documet.\n";
-    cout<<"<From> document containing "<<c2<<"% of <To> documet.\n";
+    cout<<"<To> document containing "<<c1<<"% of <From> document.\n";
+    cout<<"<From> document containing "<<c2<<"% of <To> document.\n";
     
 
   return 0;
